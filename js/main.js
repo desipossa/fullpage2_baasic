@@ -1,6 +1,14 @@
 $(function(){
 
-var txt = '2023 lee portfolio'
+    var p_color = ['#f00', '#ff0', '#0f0'];
+
+    $('.itm01 .desc .color li').each((idx, itm)=> {
+        $(itm).css({
+            background: p_color[idx]
+        })
+    })
+
+    var txt = '2023 lee portfolio'
     
     var atxt = [...txt].map((it,idx) => {
         return '<span>' + it + '</span>'
@@ -13,17 +21,13 @@ var txt = '2023 lee portfolio'
             console.log(idx, itm);
             $(itm).css({
                 opacity:1,
-                transform: 'translateY(0)',
-                transition : '1s ' + idx/10 + 's'
+                transform: 'translateY(0) rotateY(0deg)',
+                transition : '0.5s ' + idx/10 + 's'
             })
         })
     }
 
-   
-
-
-
-    $('#main').fullpage({
+       $('#main').fullpage({
         anchors: ['s01', 's02', 's03', 's04', 's05'],
         navigation: true,
         responsiveWidth: 768,
